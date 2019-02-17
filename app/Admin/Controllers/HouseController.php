@@ -155,6 +155,7 @@ class HouseController extends Controller
                 $filter->in('house_type', '房屋类型')->multipleSelect(House::$TYPE);
                 $filter->in('house_direction', '房屋朝向')->multipleSelect(House::$HOUSE_DIRECTION);
                 $filter->in('house_size', '房屋规模')->multipleSelect(House::$HOUSE_SIZE);
+                $filter->between('house_area', '面积');
             });
         });
 
