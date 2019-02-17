@@ -166,7 +166,11 @@ class HouseController extends Controller
         $grid->road('街道')->sortable();
         $grid->price('价格')->display(function (){
             if (!empty($this->price)) {
-                return $this->price . '元';
+                if ($this->house_type == 2) {
+                    return $this->price . '万元';
+                } else {
+                    return $this->price . '元';
+                }
             }
             return 0;
         })->sortable();
