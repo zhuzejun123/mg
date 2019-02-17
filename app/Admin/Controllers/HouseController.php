@@ -163,7 +163,6 @@ class HouseController extends Controller
         $grid->village('小区')->sortable();
         $grid->number('幢/门牌号')->sortable();
         $grid->floor('楼层')->sortable();
-        $grid->road('街道')->sortable();
         $grid->price('价格')->display(function (){
             if (!empty($this->price)) {
                 if ($this->house_type == 2) {
@@ -196,12 +195,12 @@ class HouseController extends Controller
             return '';
         })->sortable();
 
-        $grid->house_direction('朝向')->display(function (){
-            if (!empty($this->house_direction)) {
-                return House::$HOUSE_DIRECTION[$this->house_direction];
-            }
-            return '';
-        });
+//        $grid->house_direction('朝向')->display(function (){
+//            if (!empty($this->house_direction)) {
+//                return House::$HOUSE_DIRECTION[$this->house_direction];
+//            }
+//            return '';
+//        });
 
         $grid->decorate('装修')->display(function (){
             if (!empty($this->decorate)) {
@@ -209,6 +208,7 @@ class HouseController extends Controller
             }
             return '';
         });
+        $grid->remark('备注');
         $grid->register_time('录入时间');
         return $grid;
     }
