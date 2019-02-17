@@ -219,9 +219,7 @@ class HouseController extends Controller
         $show->number('幢/门牌号');
         $show->floor('楼层');
         $show->road('街道');
-        $show->price('价格')->as(function ($price) {
-            return $price . '元';
-        });
+        $show->price('价格');
         $show->phone('联系方式');
         $show->house_type('房屋类型')->as(function ($house_type){
             if (!empty($house_type)) {
