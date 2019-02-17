@@ -166,17 +166,7 @@ class HouseController extends Controller
         $grid->road('街道')->sortable();
         $grid->price('价格')->display(function (){
             if (!empty($this->price)) {
-                if ($this->price < 10000) {
-                    return $this->price . '元';
-                } elseif ($this->price >= 10000 && $this->price < 100000) {
-                    return substr($this->price, 0, 1) . '万' . substr($this->price, 1) . '元';
-                } elseif ($this->price >= 100000 && $this->price < 1000000) {
-                    return substr($this->price, 0, 2) . '万' . substr($this->price, 2) . '元';
-                } elseif ($this->price >= 1000000 && $this->price < 10000000) {
-                    return substr($this->price, 0, 3) . '万' . substr($this->price, 3) . '元';
-                } elseif ($this->price >= 10000000 && $this->price < 100000000) {
-                    return substr($this->price, 0, 4) . '万' . substr($this->price, 4) . '元';
-                }
+                return $this->price . '元';
             }
             return 0;
         })->sortable();
