@@ -124,14 +124,14 @@ class HouseController extends Controller
         $grid->paginate(10);
         $grid->disableRowSelector();
 
-        $grid->actions(function ($actions) {
-            $actions->disableDelete();
-            $id = $actions->getKey();
-            $actions->append("<a href=/admin/house/generator/$id><i class='fa fa-paper-plane'></i></a>");
-            $actions->append("  <a href=/admin/transfer/$id/intent><i class='fa fa-male'></i></a>");
-        });
+            $grid->actions(function ($actions) {
+//            $actions->disableDelete();
+                $id = $actions->getKey();
+                $actions->append("<a href=/admin/house/generator/$id><i class='fa fa-paper-plane'></i></a>");
+                $actions->append("  <a href=/admin/transfer/$id/intent><i class='fa fa-male'></i></a>");
+            });
 
-        $grid->filter(function($filter){
+            $grid->filter(function($filter){
             $filter->disableIdFilter();
 
             $filter->column(6, function ($filter) {
