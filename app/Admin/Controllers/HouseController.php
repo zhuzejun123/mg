@@ -220,18 +220,7 @@ class HouseController extends Controller
         $show->floor('楼层');
         $show->road('街道');
         $show->price('价格')->as(function ($price) {
-            if ($price < 10000){
-                return $price . '元';
-            } elseif ($price >= 10000 && $price < 100000) {
-                //  1万1千340元
-                return substr($price, 0, 1) . '万' . substr($price, 1, 1) . '千' . substr($price, 2) . '元';
-            } elseif ($price >= 100000 && $price < 1000000) {
-                return substr($price, 0, 2) . '万' . substr($price, 2, 1) . '千' . substr($price, 3) . '元';
-            } elseif ($price >= 1000000 && $price < 10000000) {
-                return substr($price, 0, 3) . '万' . substr($price, 3, 1) . '千' . substr($price, 4) . '元';
-            } elseif ($price >= 10000000 && $price < 100000000) {
-                return substr($price, 0, 4) . '万' . substr($price, 4, 1) . '千' . substr($price, 5) . '元';
-            }
+            return $price . '元';
         });
         $show->phone('联系方式');
         $show->house_type('房屋类型')->as(function ($house_type){
