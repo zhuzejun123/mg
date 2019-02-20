@@ -95,7 +95,11 @@ class HouseController extends Controller
                         $text .= $model->road . '， ';
                     }
                     if (!empty($model->price)) {
-                        $text .= $model->price . '元， ';
+                        if ($model->house_type == 2) {
+                            $text .= $model->price . '万元， ';
+                        } else {
+                            $text .= $model->price . '元， ';
+                        }
                     }
                     if (!empty($model->decorate)) {
                         $text .= House::$DECORATE[$model->decorate] . '， ';
