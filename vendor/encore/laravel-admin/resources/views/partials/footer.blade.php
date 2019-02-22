@@ -14,5 +14,5 @@
 
     </div>
     <!-- Default to the left -->
-    <strong>技术支持：诸泽俊 16601718803</strong>
+    <strong>技术支持：诸泽俊 16601718803 <a href="http://www.miitbeian.gov.cn/">浙ICP备19006674号</a></strong>
 </footer>
