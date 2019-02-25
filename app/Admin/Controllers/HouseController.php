@@ -213,7 +213,7 @@ class HouseController extends Controller
             }
             return '';
         });
-        $grid->remark('备注');
+        $grid->remark('备注')->style('width:500px');
         $grid->register_time('录入时间')->sortable();
         return $grid;
     }
@@ -280,7 +280,7 @@ class HouseController extends Controller
         });
         $show->register_time('登记日期');
         $show->throw_time('出租/出售日期');
-        $show->remark('备注信息')->style('width:500px');
+        $show->remark('备注信息');
 
         return $show;
     }
