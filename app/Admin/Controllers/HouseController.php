@@ -308,7 +308,7 @@ class HouseController extends Controller
         $form->text('house_area', '房屋面积');
         $form->select('decorate', '装修程度')->options(House::$DECORATE);
         $form->select('is_cert', '是否有房产证')->options(['1' => '是', '2' => '否']);
-        $form->datetime('register_time', '登记日期');
+        $form->datetime('register_time', '登记日期')->value(date('Y-m-d H:i:s', time()));
         $form->datetime('throw_time', '出租/出售日期');
         $form->textarea('remark', '备注信息');
 
