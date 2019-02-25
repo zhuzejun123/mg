@@ -280,7 +280,7 @@ class HouseController extends Controller
         });
         $show->register_time('登记日期');
         $show->throw_time('出租/出售日期');
-        $show->remark('备注信息');
+        $show->remark('备注信息')->style('width:500px');
 
         return $show;
     }
