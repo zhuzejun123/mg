@@ -307,13 +307,13 @@ class HouseController extends Controller
         $form->text('number', '幢/门牌号');
         $form->text('floor', '楼层');
         $form->text('road', '街道');
-        $form->text('price', '价格');
+        $form->text('price', '价格')->placeholder('请输入价格不要填写单位');
         $form->text('phone', '联系方式');
         $form->select('house_type', '房屋类型')->options(House::$TYPE);
         $form->select('house_status', '房屋状态')->options(House::$STATUS);
         $form->select('house_size', '房屋规模')->options(House::$HOUSE_SIZE);
         $form->select('house_direction', '房屋朝向')->options(House::$HOUSE_DIRECTION);
-        $form->text('house_area', '房屋面积');
+        $form->text('house_area', '房屋面积')->placeholder('请输入面积不要填写单位');
         $form->select('decorate', '装修程度')->options(House::$DECORATE);
         $form->select('is_cert', '是否有房产证')->options(['1' => '是', '2' => '否']);
         $form->datetime('register_time', '登记日期')->value(date('Y-m-d H:i:s', time()));
