@@ -95,7 +95,11 @@ class HouseController extends Controller
                         $text .= $model->road . '， ';
                     }
                     if (!empty($model->price)) {
-                        $text .= $model->price . '元， ';
+                        if ($model->house_type == 2) {
+                            $text .= $model->price . '万元， ';
+                        } else {
+                            $text .= $model->price . '元， ';
+                        }
                     }
                     if (!empty($model->decorate)) {
                         $text .= House::$DECORATE[$model->decorate] . '， ';
@@ -123,6 +127,7 @@ class HouseController extends Controller
         $grid->disableExport();
         $grid->paginate(10);
         $grid->disableRowSelector();
+        $grid->model()->orderBy('id', 'desc');
 
             $grid->actions(function ($actions) {
 //            $actions->disableDelete();
@@ -159,7 +164,7 @@ class HouseController extends Controller
             });
         });
 
-        $grid->area('地区')->sortable();
+//        $grid->area('地区')->sortable();
         $grid->village('小区')->sortable();
         $grid->number('幢/门牌号')->sortable();
         $grid->floor('楼层')->sortable();
@@ -208,8 +213,8 @@ class HouseController extends Controller
             }
             return '';
         });
-        $grid->remark('备注');
-        $grid->register_time('录入时间');
+        $grid->remark('备注')->style('width:500px');
+        $grid->register_time('录入时间')->sortable();
         return $grid;
     }
 

@@ -14,5 +14,5 @@
 
     </div>
     <!-- Default to the left -->
-    <strong>Powered by <a href="https://github.com/z-song/laravel-admin" target="_blank">laravel-admin</a></strong>
+    <strong>技术支持：诸泽俊 16601718803 <a href="http://www.miitbeian.gov.cn/">浙ICP备19006674号</a></strong>
 </footer>
