@@ -170,6 +170,9 @@ class HouseController extends Controller
         $grid->floor('楼层')->sortable();
         $grid->price('价格')->display(function (){
             if (!empty($this->price)) {
+                if ($this->price == 0) {
+                    return '未定';
+                }
                 if ($this->house_type == 2) {
                     return $this->price . '万元';
                 } else {
